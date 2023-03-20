@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.githubrepositories.ui.MainFragment"
+        android:label="GitHub Repositories"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_itemDetailFragment"
+            app:destination="@id/itemDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemDetailFragment"
+        android:name="com.example.githubrepositories.ui.ItemDetailFragment"
+        android:label="Repository Detail"
+        tools:layout="@layout/fragment_item_detail" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="full_name"
+            app:argType="string" />
+        <argument
+            android:name="owner_avatar"
+            app:argType="string" />
+        <argument
+            android:name="owner_name"
+            app:argType="string" />
+        <argument
+            android:name="owner_profile"
+            app:argType="string" />
+        <argument android:name="repo_link"
+            app:argType="string" />
+        <argument
+            android:name="description"
+            app:argType="string" />
+        <argument
+            android:name="created_date"
+            app:argType="string" />
+        <argument
+            android:name="visibility"
+            app:argType="string" />
+        <argument
+            android:name="topics"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_itemDetailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>
